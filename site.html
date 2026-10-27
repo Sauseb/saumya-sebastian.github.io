@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Saumya Sebastian — semiconductor process development, thin films, device fabrication, metrology and automated experimentation.">
+<title>Saumya Sebastian | Semiconductor R&D</title>
+<style>
+:root{
+  --bg:#080a0d;
+  --panel:#101419;
+  --panel2:#151a20;
+  --text:#f1f4f7;
+  --muted:#9ca7b3;
+  --line:#27303a;
+  --accent:#77e3c2;
+  --accent2:#8db8ff;
+  --max:1180px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(calc(100% - 40px),var(--max));
+  margin:auto;
+}
+
+/* ================================
+   NAVIGATION
+   ================================ */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:20;
+  background:rgba(8,10,13,.82);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.navin{
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-weight:750;
+  letter-spacing:.02em;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+.links{
+  display:flex;
+  gap:25px;
+  color:#b9c1ca;
+  font-size:.9rem;
+}
+
+.links a:hover{
+  color:#fff;
+}
+
+/* ================================
+   HERO
+   ================================ */
+
+.hero{
+  padding:150px 0 90px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:620px;
+  height:620px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(119,227,194,.11),
+    transparent 65%
+  );
+  right:-180px;
+  top:-160px;
+}
+
+.eyebrow{
+  color:var(--accent);
+  font-size:.8rem;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:700;
+}
+
+h1{
+  font-size:clamp(3.2rem,8vw,6.8rem);
+  line-height:.92;
+  letter-spacing:-.065em;
+  margin:18px 0 26px;
+  max-width:900px;
+}
+
+.hero p{
+  font-size:1.16rem;
+  color:var(--muted);
+  max-width:760px;
+}
+
+.cta{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+.btn{
+  display:inline-block;
+  position:static;
+  border:1px solid var(--line);
+  padding:11px 16px;
+  border-radius:7px;
+  font-weight:650;
+  background:#11161b;
+  white-space:nowrap;
+}
+
+.btn.primary{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#07110e;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+}
+
+/* ================================
+   STATS
+   ================================ */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  margin-top:70px;
+  border:1px solid var(--line);
+}
+
+.stat{
+  background:var(--bg);
+  padding:22px;
+}
+
+.stat b{
+  font-size:1.8rem;
+  display:block;
+}
+
+.stat span{
+  font-size:.82rem;
+  color:var(--muted);
+}
+
+/* ================================
+   SECTIONS
+   ================================ */
+
+section{
+  padding:100px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.sectionhead{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:end;
+  margin-bottom:45px;
+}
+
+.kicker{
+  color:var(--accent2);
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-weight:700;
+}
+
+h2{
+  font-size:clamp(2.1rem,4vw,3.7rem);
+  letter-spacing:-.045em;
+  line-height:1;
+  margin:8px 0 0;
+}
+
+.lead{
+  max-width:500px;
+  color:var(--muted);
+  margin:0;
+}
+
+/* ================================
+   GRID / CARDS
+   ================================ */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:18px;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:26px;
+  border-radius:10px;
+}
+
+.card h3{
+  margin:0 0 9px;
+  font-size:1.15rem;
+}
+
+.card p{
+  color:var(--muted);
+  margin:0;
+}
+
+.span4{grid-column:span 4}
+.span5{grid-column:span 5}
+.span7{grid-column:span 7}
+.span8{grid-column:span 8}
+.span12{grid-column:span 12}
+
+/* ================================
+   IMAGES
+   ================================ */
+
+.media{
+  overflow:hidden;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#0d1014;
+}
+
+.media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* ================================
+   RESEARCH
+   ================================ */
+
+.research-layout{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:20px;
+}
+
+.big-number{
+  font-size:4.5rem;
+  line-height:1;
+  font-weight:800;
+  color:#26313c;
+}
+
+.timeline{
+  display:grid;
+  gap:14px;
+}
+
+.timeline article{
+  border-left:2px solid var(--accent);
+  padding:0 0 0 20px;
+}
+
+.timeline small{
+  color:var(--accent);
+  font-weight:700;
+}
+
+/* ================================
+   TAGS
+   ================================ */
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.tag{
+  padding:6px 9px;
+  border:1px solid var(--line);
+  border-radius:5px;
+  color:#cbd3db;
+  font-size:.78rem;
+  background:#0c1014;
+}
+
+/* ================================
+   PAPER
+   ================================ */
+
+.paper{
+  background:linear-gradient(135deg,#12181f,#0e1217);
+  border:1px solid #33404c;
+  padding:34px;
+  border-radius:12px;
+}
+
+.paper .journal{
+  color:var(--accent);
+  font-size:.8rem;
+  font-weight:750;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+}
+
+.paper h3{
+  font-size:2rem;
+  line-height:1.15;
+  margin:12px 0;
+}
+
+.paper p{
+  color:#b2bdc8;
+}
+
+.papergrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:22px;
+}
+
+.papergrid img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:7px;
+  border:1px solid var(--line);
+}
+
+/* ================================
+   PUBLICATIONS
+   ================================ */
+
+.publication-card{
+  background:#11151a;
+  border:1px solid #29313a;
+  border-radius:12px;
+  padding:30px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+.publication-card.featured{
+  border-color:var(--accent);
+  background:linear-gradient(
+    135deg,
+    #121a1c 0%,
+    #11151a 100%
+  );
+}
+
+.pub-number{
+  font-size:2.5rem;
+  font-weight:800;
+  line-height:1;
+  color:#34404b;
+  margin-bottom:10px;
+}
+
+.journal{
+  color:var(--accent);
+  font-size:.78rem;
+  font-weight:750;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-bottom:10px;
+}
+
+.publication-card h3{
+  font-size:1.35rem;
+  line-height:1.35;
+  margin:0 0 10px 0;
+  color:#f3f5f7;
+}
+
+.authors{
+  margin:0 0 12px 0;
+  color:#cbd3db;
+  font-size:.92rem;
+}
+
+.publication-card > p{
+  color:var(--muted);
+}
+
+.pub-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:16px;
+  margin-bottom:18px;
+}
+
+.pub-tags .tag{
+  padding:6px 9px;
+  border:1px solid var(--line);
+  border-radius:5px;
+  color:#cbd3db;
+  font-size:.78rem;
+  background:#0c1014;
+}
+
+.publication-card .btn{
+  position:static;
+  display:inline-block;
+  margin-top:0;
+  clear:both;
+}
+
+.journal-detail{
+  color:#9ca7b3;
+  font-size:.85rem;
+  margin-top:12px;
+}
+
+/* ================================
+   SKILLS
+   ================================ */
+
+.skillgrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.skill h3{
+  color:var(--accent);
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+
+footer{
+  padding:55px 0;
+  color:#7f8a96;
+}
+
+.footerin{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media(max-width:800px){
+
+  .links{
+    display:none;
+  }
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .research-layout,
+  .skillgrid,
+  .papergrid{
+    grid-template-columns:1fr;
+  }
+
+  .span4,
+  .span5,
+  .span7,
+  .span8{
+    grid-column:span 12;
+  }
+
+  .sectionhead{
+    display:block;
+  }
+
+  .lead{
+    margin-top:18px;
+  }
+
+  /* Publications */
+
+  /* Current publication cards */
+  .publication-card{
+    padding:22px;
+  }
+
+  .publication-card h3{
+    font-size:1.1rem;
+  }
+
+  .pub-number{
+    font-size:1.8rem;
+  }
+
+  .publication-card .btn{
+    margin-top:4px;
+  }
+
+}
+</style>
+</head>
+<body>
+<nav><div class="container navin">
+  <a class="logo" href="#top">SAUMYA SEBASTIAN<span></span></a>
+  <div class="links">
+    <a href="#research">Research</a><a href="#publication">Publication</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<main id="top">
+<section class="hero">
+<div class="container">
+  <div class="eyebrow">Materials Science × Semiconductor Engineering</div>
+  <h1>Fabricating and characterising semiconductor materials; thin-film process & device optimisation</h1>
+  <p>Saumya Sebastian — PhD in Materials Science & Engineering, NTU Singapore. Hands-on experience spanning semiconductor thin-film processing, device fabrication, metrology, automated experimentation, equipment commissioning and Python-driven data analysis.</p>
+  <div class="cta">
+    <a class="btn primary" href="#research">Explore the work ↓</a>
+    <a class="btn" href="mailto:sauseb98@gmail.com">Get in touch</a>
+  </div>
+
+</div>
+</section>
+
+<section id="research">
+<div class="container">
+ <div class="sectionhead"><div><div class="kicker">01 / Thesis Research</div><h2>Tuning ionic migration in perovskite using additives and spacer cations for device applications</h2></div>
+ <p class="lead">My PhD research investigated light-induced phase segregation and ionic migration in mixed-halide perovskite semiconductors, and translated the results to device applications.</p></div>
+ <div class="research-layout">
+   <div class="card">
+    <div class="big-number">01</div>
+    <h3>The problem</h3>
+    <p>Mixed-halide perovskites can segregate into iodide- and bromide-rich domains under illumination, creating optical and device instability. The research focused on understanding and modulating this behaviour. Two themes were investigated.</p>
+      <ul>
+        <li>Influence of additives in modulating phase segregation and their translation to device applications.</li>
+        <li>Effect of spacer cation and the resulting 2-D perovskite structure in regulating light induced phase segregation.</li>
+      </ul>
+    <div class="tags"><span class="tag">Ionic migration</span><span class="tag">Phase segregation</span><span class="tag">Thin films</span><span class="tag">Stability</span></div>
+   </div>
+   <div class="media"><img src="assets/phase-segregation.png" alt="Illustration of light-induced phase segregation"><div class="caption">Light-induced phase segregation in mixed-halide perovskites.</div></div>
+ </div>
+
+ <div class="grid" style="margin-top:18px">
+  <div class="media span7"><img src="assets/device-measurement.png" alt="Device measurement schematic"></div>
+  <div class="card span5"><h3>Device translation</h3><p>Translated material-level ionic behaviour modulated by additives into switchable photovoltaic and lateral memristive device measurements.</p></div>
+ </div>
+
+  <div class="card span6">
+        <h3>Structure → property (Root Cause Analysis)</h3>
+        <p>Linked spacer-cation structure, packing, disorder and defect characteristics to ionic migration and phase-segregation behaviour.</p>
+  </div>
+
+  <div class="card span6">
+        <h3>Optical metrology</h3>
+        <p>Used PL, absorbance, XRD, FTIR, GIWAXS and TRPL to track composition, structure and phase segregation tendency.</p>
+  </div>
+
+</section>
+
+<section id="automation">
+<div class="container">
+
+  <div class="sectionhead">
+    <div>
+      <div class="kicker">02 / Experimental Platform</div>
+      <h2>Automated experimentation</h2>
+    </div>
+
+    <p class="lead">
+      Set up and operated automated experimental platforms within
+      glovebox environments for high-throughput perovskite research
+      and device fabrication.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <!-- SpinBot video -->
+    <div class="media span7">
+      <video autoplay muted loop playsinline
+             style="width:100%;height:100%;object-fit:cover;display:block;">
+        <source src="assets/video/spinbot-1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Automated thin-film processing -->
+    <div class="card span5">
+      <h3>Automated thin-film processing</h3>
+
+      <p>
+        Commissioned, calibrated and maintained automated platforms
+        for solution handling and thin-film processing inside glovebox
+        environments, including troubleshooting of system failures.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Commissioning</span>
+        <span class="tag">Calibration</span>
+        <span class="tag">Troubleshooting</span>
+        <span class="tag">Glovebox</span>
+      </div>
+    </div>
+
+    <!-- Experimental setup -->
+    <div class="media span4 small-image">
+      <img src="assets/automated-setup.jpg"
+           alt="Automated experimental setup">
+    </div>
+
+    <!-- High-throughput platform -->
+    <div class="media span4 small-image">
+      <img src="assets/high-throughput-platform.png"
+           alt="High-throughput experimental platform">
+    </div>
+
+    <!-- Composition mapping -->
+    <div class="card span4">
+      <h3>High-throughput composition mapping</h3>
+
+      <p>
+        Developed an automated drop-casting platform and workflows
+        for generating MAPb(Br<sub>x</sub>I<sub>1−x</sub>)<sub>3</sub>
+        compositional gradients and rapidly screening optical stability.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Automation</span>
+        <span class="tag">Process control</span>
+        <span class="tag">Composition mapping</span>
+      </div>
+    </div>
+
+    <!-- Characterization -->
+    <div class="media span7 small-image">
+      <img src="assets/characterization.png"
+           alt="Automated characterization equipment">
+    </div>
+
+    <!-- Hardware and software -->
+    <div class="card span5">
+      <h3>Hardware × software</h3>
+
+      <p>
+        Integrated experimental hardware, GUI workflows and data
+        acquisition to connect automated instruments with structured
+        experimental data.
+      </p>
+
+      <div class="tags">
+        <span class="tag">GUI development</span>
+        <span class="tag">Data acquisition</span>
+        <span class="tag">Hardware integration</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+ <div class="sectionhead"><div><div class="kicker">03 / Device Work</div><h2>Device fabrication and thin-film processing</h2></div>
+</div>
+ <div class="grid">
+   <div class="media span7"><img src="assets/solar_cell.png" alt="Solar cells"></div>
+   <div class="card span5">
+      <h3>Automated experimentation</h3>
+      <ul>
+        <li>Fabrication of wide-bandgap perovskite solar cells employing automated spin-coating platform</li>
+        <li>PVD (Thermal evaporation) of electrodes and charge transport layers</li>
+      </ul>
+    </div>
+   <div class="media span7"><img src="assets/HTL.png" alt="Solar cells"></div>
+   <div class="card span5"><h3>Optimisation</h3><p><ul><li>Efficiency optimisation of wide-bandgap perovskite solar cells.</li> <li>Tuning of material parameters and processing conditions</li></ul></p>
+    <class="tags"><span class="tag">Automated experimentation</span><span class="tag">thin film processing</span><span class="tag">solar cell</span></div>
+
+</div>
+</section>
+
+<section id="publication">
+
+<div class="container">
+
+    <div class="sectionhead">
+        <div>
+            <div class="kicker">04 / Publications</div>
+            <h2>Selected research publications.</h2>
+        </div>
+
+        <p class="lead">
+            Research spanning semiconductor materials, automated experimentation,
+            device optimization.
+        </p>
+    </div>
+
+    <!-- Publication 1 -->
+
+    <div class="publication-card featured">
+
+        <div class="pub-number">01</div>
+
+        <div class="journal">
+            ACS Applied Materials &amp; Interfaces · 2025
+        </div>
+
+        <h3>
+            Additive Screening for Suppressing Light-Induced Phase Segregation
+            and Ionic Activity in Halide Perovskite Devices
+        </h3>
+
+        <p class="authors">
+            <strong>Saumya Sebastian</strong> et al.
+        </p>
+
+        <p>
+            Investigated additive-driven control of ionic activity and
+            light-induced phase segregation in mixed-halide perovskites
+            along with device-level validation.
+        </p>
+
+        <div class="pub-tags">
+            <span class="tag">Perovskites</span>
+            <span class="tag">Ionic migration</span>
+            <span class="tag">Devices</span>
+        </div>
+
+        <a class="btn primary"
+           href="https://doi.org/10.1021/acsami.5c08005"
+           target="_blank"
+           rel="noopener">
+            View publication ↗
+        </a>
+
+    </div>
+
+    <br><br>
+
+    <!-- Publication 2 -->
+
+    <div class="publication-card">
+
+        <div class="pub-number">02</div>
+
+        <div class="journal">
+            ACS Energy Letters · 2025
+        </div>
+
+        <h3>
+            Machine-Learning-Driven in-Device Optimization of All-Printed
+            Perovskite Solar Cells
+        </h3>
+
+        <p class="authors">
+            Emha Bayu Miftahullatif et al.
+        </p>
+
+        <p>
+            Research combining machine learning and in-device optimization
+            for improving the performance of all-printed perovskite solar cells.
+        </p>
+
+        <div class="pub-tags">
+            <span class="tag">Machine learning</span>
+            <span class="tag">Solar cells</span>
+            <span class="tag">Optimization</span>
+            <span class="tag">Automation</span>
+        </div>
+
+        <div class="journal-detail">
+            ACS Energy Letters 10.8 · 3952–3961
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <!-- Publication 3 -->
+
+    <div class="publication-card">
+
+        <div class="pub-number">03</div>
+
+        <div class="journal">
+            Matter · 2022
+        </div>
+
+        <h3>
+            An Object-Oriented Framework to Enable Workflow Evolution
+            Across Materials Acceleration Platforms
+        </h3>
+
+        <p class="authors">
+            Chang Jie Leong et al.
+        </p>
+
+        <p>
+            Development of an object-oriented framework enabling flexible
+            workflow evolution across materials acceleration platforms.
+        </p>
+
+        <div class="pub-tags">
+            <span class="tag">Materials acceleration</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Workflow</span>
+            <span class="tag">Software</span>
+        </div>
+
+        <div class="journal-detail">
+            Matter 5.10 · 3124–3134
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<section id="skills">
+<div class="container">
+ <div class="sectionhead"><div><div class="kicker">05 / Technical Toolkit</div><h2>Technical Skillsets</h2></div>
+ <p class="lead">A combination of hands-on semiconductor processing, metrology, device fabrication, automation and data-driven optimization.</p></div>
+ <div class="skillgrid">
+  <div class="card skill"><h3>Semiconductor processing</h3><p>PVD / thermal evaporation · spin coating · glovebox operations · semiconductor device fabrication · process-property optimization</p></div>
+  <div class="card skill"><h3>Metrology & characterization</h3><p>SEM · AFM · GIWAXS · XRD · FTIR · PL · UV–Vis · TRPL · profilometry · contact angle · TGA · XPS · Galvanostatic measurement · I-V characteristics </p></div>
+  <div class="card skill"><h3>Equipment & automation</h3><p>Commissioning · calibration · troubleshooting · automated experimentation · hardware–software integration · GUI development using LLM applications</p></div>
+  <div class="card skill"><h3>Data & process engineering</h3><p>Python · machine learning · DOE · statistical analysis · SPC · FMEA · root-cause analysis · JMP · Origin · MS-Office</p></div>
+
+ </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+
+  <div class="sectionhead">
+    <div>
+      <div class="kicker">06 / Contact</div>
+      <h2>Let’s connect.</h2>
+    </div>
+
+    <div>
+      <p class="lead">
+        Open to opportunities in semiconductor process development,
+        technology development, metrology, materials and R&amp;D.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <p style="font-size:1.2rem;margin-top:0">
+      <strong>Saumya Sebastian, PhD</strong><br>
+      Materials Science &amp; Engineering<br>
+      Nanyang Technological University, Singapore
+    </p>
+
+    <div class="cta">
+      <a class="btn primary"
+         href="mailto:sauseb98@gmail.com">
+        sauseb98@gmail.com
+      </a>
+
+      <a class="btn"
+         href="https://www.linkedin.com/in/saumya-sebastian-407415174"
+         target="_blank"
+         rel="noopener">
+        LinkedIn ↗
+      </a>
+    </div>
+  </div>
+
+</div>
+</section>
+</main>
+
+<footer><div class="container footerin"><span>© 2026 Saumya Sebastian</span><span>Semiconductor R&D · Materials · Process · Devices</span></div></footer>
+</body>
+</html>
